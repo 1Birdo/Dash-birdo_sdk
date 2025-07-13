@@ -4,7 +4,9 @@
 
 https://dashboard.birdo.uk
 
-Currently The import is still being approved and test by PyPI Im also still trying to work with jsdelivr or anyother NPM provider for the javascript distribution 
+Currently The import is still being approved and test by PyPI Im also still trying to work with jsdelivr + NPM providers for the javascript distribution 
+
+https://www.jsdelivr.com/package/npm/birdo-sdk?tab=files
 
 <img width="771" height="161" alt="image" src="https://github.com/user-attachments/assets/3f2b5b59-5b3b-4a35-a867-77cbc2c07748" />
 
@@ -46,6 +48,10 @@ client.stop()
 ```
 
 ## Javascript (In Dev) 
+
+For Reference / Usage 
+
+https://www.jsdelivr.com/package/npm/birdo-sdk?tab=files
 
 Usage Examples
 Browser Usage
