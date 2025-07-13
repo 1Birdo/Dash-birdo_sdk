@@ -1,6 +1,6 @@
 # Python + Javascript (In Dev) 
 
-### Birdo Python SDK
+### Dashboard.birdo.uk SDK's + Live SDK development 
 
 ## Python / Python3 (In Dev) 
 
