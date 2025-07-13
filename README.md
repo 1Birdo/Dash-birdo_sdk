@@ -2,7 +2,7 @@
 
 ### Dashboard.birdo.uk SDK's
 
-https://dashboard.bird.uk
+https://dashboard.birdo.uk
 
 ## Python / Python3 (In Dev) 
 
