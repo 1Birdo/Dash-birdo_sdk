@@ -1,34 +1,48 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import { babel } from '@rollup/plugin-babel';
+import { terser } from 'rollup-plugin-terser';
 
-module.exports = {
-  entry: './src/index.js',
-  target: 'node',
-  externals: [nodeExternals()],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'node.js',
-    library: 'Birdo',
-    libraryTarget: 'umd'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+// Environment variables
+const isProduction = process.env.NODE_ENV === 'production';
+const isBrowser = process.env.BUILD_TARGET === 'browser';
+
+export default {
+  input: 'src/index.js',
+  output: [
+    {
+      file: isBrowser 
+        ? 'dist/browser.js' 
+        : 'dist/node.js',
+      format: 'umd',
+      name: 'Birdo',
+      sourcemap: true,
+      globals: {
+        'cross-fetch': 'fetch'
       }
-    ]
-  },
-  resolve: {
-    alias: {
-      './browser': false,
-      './node': path.resolve(__dirname, 'src/node.js')
+    },
+    {
+      file: isBrowser 
+        ? 'dist/browser.esm.js' 
+        : 'dist/node.esm.js',
+      format: 'esm',
+      sourcemap: true
     }
+  ],
+  plugins: [
+    nodeResolve(),
+    commonjs(),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**'
+    }),
+    isProduction && terser()
+  ],
+  external: isBrowser ? [] : ['os', 'child_process', 'fs', 'util', 'v8'],
+  onwarn(warning, warn) {
+    // Skip certain warnings
+    if (warning.code === 'UNRESOLVED_IMPORT') return;
+    if (warning.code === 'CIRCULAR_DEPENDENCY') return;
+    warn(warning);
   }
 };
