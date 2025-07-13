@@ -28,7 +28,7 @@ Avg Disk Usage
 Network In + Out
 
 ```python
-from birdo_sdk import BirdoClient
+from BirdoDash_sdk import BirdoClient
 
 # Initialize client
 client = BirdoClient(
