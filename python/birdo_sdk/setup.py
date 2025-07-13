@@ -7,7 +7,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md'), encoding='utf-8'
 
 # Get package version
 about = {}
-with open(os.path.join(os.path.dirname(__file__), 'birdo_sdk', '__about__.py'), encoding='utf-8') as f:
+with open(os.path.join(os.path.dirname(__file__), 'sdk', '__about__.py'), encoding='utf-8') as f:
     exec(f.read(), about)
 
 setup(
