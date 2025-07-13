@@ -11,6 +11,13 @@ pip install birdo-sdk
 
 ## Usage
 
+This will all be used to collect and send metric / statitics to your personal Dashboard to monitor all your servers visually 
+
+Avg CPU Usage
+Avg Memory Usage
+Avg Disk Usage
+Network In + Out
+
 ```python
 from birdo_sdk import BirdoClient
 
