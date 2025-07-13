@@ -4,15 +4,15 @@
 
 https://dashboard.birdo.uk
 
+Currently The import is still being approved and test by PyPI Im also still trying to work with jsdelivr or anyother NPM provider for the javascript distribution 
+
+<img width="771" height="161" alt="image" src="https://github.com/user-attachments/assets/3f2b5b59-5b3b-4a35-a867-77cbc2c07748" />
+
+
 ## Python / Python3 (In Dev) 
 
 Official Python SDK for the Birdo Monitoring Service.
 ## Installation
-
-Currently The import is still being approved and test by PyPI 
-
-<img width="771" height="161" alt="image" src="https://github.com/user-attachments/assets/3f2b5b59-5b3b-4a35-a867-77cbc2c07748" />
-
 
 ```bash
 pip install BirdoDash-sdk
