@@ -1,4 +1,4 @@
-# Python 
+# Python + Javascript (In Dev) 
 
 # Birdo Python SDK
 
