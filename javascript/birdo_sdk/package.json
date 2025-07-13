@@ -1,0 +1,46 @@
+{
+  "name": "birdo-sdk",
+  "version": "1.0.0",
+  "description": "Official JavaScript SDK for Birdo Monitoring Service",
+  "main": "dist/node.js",
+  "browser": "dist/browser.js",
+  "module": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "build": "npm run build:node && npm run build:browser",
+    "build:node": "webpack --config webpack.node.config.js",
+    "build:browser": "webpack --config webpack.browser.config.js",
+    "test": "npm run test:node && npm run test:browser",
+    "test:node": "mocha test/node.test.js",
+    "test:browser": "karma start --single-run",
+    "lint": "eslint src test",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "eslint": "^8.18.0",
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-mocha": "^2.0.1",
+    "mocha": "^10.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "keywords": [
+    "monitoring",
+    "metrics",
+    "performance",
+    "birdo"
+  ],
+  "author": "Birdo Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/birdo/birdo-js-sdk.git"
+  }
+}
