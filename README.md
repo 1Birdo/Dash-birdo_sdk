@@ -15,7 +15,7 @@ Currently The import is still being approved and test by PyPI
 
 
 ```bash
-pip install birdo-sdk
+pip install BirdoDash-sdk
 ```
 
 ## Usage
