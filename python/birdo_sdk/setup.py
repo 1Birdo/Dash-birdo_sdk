@@ -46,3 +46,9 @@ setup(
         'Bug Reports': 'https://github.com/birdo/birdo-python-sdk/issues',
     },
 )
+
+extras_require={
+    'test': ['pytest>=7.0.0', 'pytest-cov>=3.0.0'],
+    'docs': ['sphinx>=4.0.0', 'sphinx-rtd-theme>=0.5.0'],
+    'dev': ['flake8>=4.0.0', 'black>=22.0.0', 'mypy>=0.900'],
+},
